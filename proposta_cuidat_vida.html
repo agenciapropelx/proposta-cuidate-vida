@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Cuidat Vida</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #185BED;
+    --azul-escuro: #0D3B9E;
+    --escuro: #0A0A0F;
+    --cinza: #6B7280;
+    --cinza-claro: #F4F6FB;
+    --verde: #059669;
+    --laranja: #D97706;
+    --branco: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--branco);
+    color: var(--escuro);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  @media print {
+    .page-break { page-break-before: always; }
+    body { font-size: 13px; max-width: 100%; }
+    .capa { min-height: auto; padding: 60px 64px; }
+  }
+
+  @media (min-width: 1200px) {
+    .capa { padding: 80px 10%; }
+    .secao { padding: 72px 10%; }
+  }
+  @media (min-width: 900px) and (max-width: 1199px) {
+    .capa { padding: 80px 64px; }
+    .secao { padding: 72px 64px; }
+  }
+
+  @media (max-width: 640px) {
+    .capa { padding: 28px 20px; min-height: 100svh; }
+    .capa-topo { flex-wrap: wrap; gap: 10px; }
+    .capa-titulo { font-size: 38px; }
+    .capa-desc { font-size: 14px; }
+    .capa-rodape { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .logo-agencia { font-size: 17px; }
+    .capa-tag { font-size: 10px; padding: 5px 10px; }
+    .bonus-badge { font-size: 11px; padding: 7px 12px; }
+
+    .secao { padding: 32px 20px; }
+    h2 { font-size: 24px; }
+    .lead { font-size: 15px; }
+
+    .diag-grid { grid-template-columns: 1fr !important; gap: 12px; }
+    .diag-card { padding: 18px 14px; }
+    .diag-card p { font-size: 14px; }
+    .diag-card h4 { font-size: 15px; }
+
+    .planos-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .passos-opcoes { grid-template-columns: 1fr !important; gap: 12px; }
+
+    .plano-preco { font-size: 36px; }
+    .plano-header { padding: 20px 12px; }
+    .plano-body { padding: 14px 12px; }
+    .plano-footer { padding: 12px; }
+    .plano-nome { font-size: 22px; }
+    .plano-item { font-size: 14px; }
+    .plano-tag { font-size: 11px; }
+
+    .bonus-card { grid-template-columns: 1fr !important; gap: 20px; text-align: center; padding: 20px 12px; }
+    .bonus-valor { font-size: 52px; }
+    .bonus-lista li { font-size: 14px; }
+
+    .contato-box { flex-direction: column !important; align-items: flex-start; gap: 16px; padding: 18px 12px; }
+    .contato-info { text-align: left; }
+    .contato-box h4 { font-size: 18px; }
+
+    .fase { grid-template-columns: 80px 1fr; }
+    .fase-num { padding: 14px 8px; }
+    .fase-conteudo { padding: 14px 0 14px 16px; }
+    .fase-label { font-size: 11px; }
+    .fase-conteudo h4 { font-size: 15px; }
+    .fase-conteudo p { font-size: 13px; }
+
+    .passo-opcao { padding: 16px 12px; }
+    .passo-opcao-preco { font-size: 22px; }
+    .passo-opcao h4 { font-size: 16px; }
+
+    .secao-num { font-size: 10px; }
+    .destaque-box { padding: 16px 12px; }
+    .destaque-box p { font-size: 14px; }
+    .validade { font-size: 13px; padding: 12px; }
+  }
+
+  /* ---- CAPA ---- */
+  .capa {
+    background: var(--escuro);
+    min-height: 100vh;
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(24,91,237,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .capa::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(24,91,237,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .capa-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo-agencia {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--azul);
+    letter-spacing: 0.05em;
+  }
+
+  .capa-tag {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  .capa-meio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 60px;
+  }
+
+  .capa-subtitulo {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+  }
+
+  .capa-titulo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1.0;
+    color: var(--branco);
+    margin-bottom: 16px;
+  }
+
+  .capa-titulo span {
+    color: var(--azul);
+  }
+
+  .capa-desc {
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    max-width: 520px;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+
+  .capa-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+  }
+
+  .capa-rodape-info {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+  }
+
+  .capa-rodape-info strong {
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+
+  .bonus-badge {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- LAYOUT GERAL ---- */
+  .secao {
+    padding: 72px 64px;
+    border-bottom: 1px solid #EAECF0;
+  }
+
+  .secao:last-child { border-bottom: none; }
+
+  .secao-alt {
+    background: var(--cinza-claro);
+  }
+
+  /* ---- HEADINGS ---- */
+  .secao-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--escuro);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--escuro);
+    margin-bottom: 12px;
+  }
+
+  .lead {
+    font-size: 17px;
+    color: var(--cinza);
+    max-width: 640px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+
+  /* ---- DIAGNÓSTICO ---- */
+  .diag-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .diag-card {
+    background: var(--branco);
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .diag-card-icone {
+    width: 44px; height: 44px;
+    background: var(--azul);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .diag-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--escuro);
+  }
+
+  .diag-card p {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.65;
+  }
+
+  .destaque-box {
+    background: linear-gradient(135deg, #EBF3FD, #DBEAFE);
+    border-left: 4px solid var(--azul);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+
+  .destaque-box p {
+    font-size: 15px;
+    color: #1E40AF;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ---- PLANOS ---- */
+  .planos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .plano-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #E5E7EB;
+  }
+
+  .plano-card.destaque {
+    border-color: var(--azul);
+    box-shadow: 0 8px 40px rgba(24,91,237,0.15);
+  }
+
+  .plano-header {
+    padding: 28px 32px;
+    background: var(--cinza-claro);
+  }
+
+  .plano-card.destaque .plano-header {
+    background: var(--azul);
+  }
+
+  .plano-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    background: rgba(24,91,237,0.12);
+    color: var(--azul);
+  }
+
+  .plano-card.destaque .plano-tag {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .plano-nome {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--escuro);
+    line-height: 1.1;
+  }
+
+  .plano-card.destaque .plano-nome { color: var(--branco); }
+
+  .plano-preco-label {
+    font-size: 12px;
+    color: var(--cinza);
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .plano-card.destaque .plano-preco-label { color: rgba(255,255,255,0.6); }
+
+  .plano-preco {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    color: var(--escuro);
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .plano-card.destaque .plano-preco { color: var(--branco); }
+
+  .plano-preco sup {
+    font-size: 20px;
+    font-weight: 700;
+    vertical-align: super;
+  }
+
+  .plano-preco-obs {
+    font-size: 12px;
+    margin-top: 6px;
+    color: var(--cinza);
+  }
+
+  .plano-card.destaque .plano-preco-obs { color: rgba(255,255,255,0.55); }
+
+  .plano-body {
+    padding: 28px 32px;
+    background: var(--branco);
+  }
+
+  .plano-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #F3F4F6;
+    font-size: 14px;
+    color: var(--escuro);
+    line-height: 1.5;
+  }
+
+  .plano-item:last-child { border-bottom: none; }
+
+  .plano-item-check {
+    width: 18px; height: 18px;
+    background: #DCFCE7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--verde);
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 700;
+  }
+
+  .plano-footer {
+    padding: 20px 32px;
+    background: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+  }
+
+  .plano-card.destaque .plano-footer {
+    background: #EBF3FD;
+  }
+
+  .setup-gratis {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--verde);
+    font-weight: 600;
+  }
+
+  .setup-gratis span {
+    background: #DCFCE7;
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- CRONOGRAMA ---- */
+  .cronograma {
+    margin-top: 40px;
+  }
+
+  .fase {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .fase-num {
+    padding: 28px 24px;
+    border-right: 2px solid var(--azul);
+    position: relative;
+  }
+
+  .fase-num::after {
+    content: '';
+    position: absolute;
+    right: -7px; top: 36px;
+    width: 12px; height: 12px;
+    background: var(--azul);
+    border-radius: 50%;
+  }
+
+  .fase-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .fase-prazo {
+    font-size: 12px;
+    color: var(--cinza);
+    margin-top: 4px;
+  }
+
+  .fase-conteudo {
+    padding: 28px 0 28px 36px;
+    border-bottom: 1px solid #EAECF0;
+  }
+
+  .fase:last-child .fase-conteudo { border-bottom: none; }
+
+  .fase-conteudo h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .fase-conteudo p {
+    font-size: 14px;
+    color: var(--cinza);
+    line-height: 1.65;
+  }
+
+  /* ---- BÔNUS ---- */
+  .bonus-secao {
+    background: var(--escuro);
+    color: var(--branco);
+  }
+
+  .bonus-secao h2 { color: var(--branco); }
+  .bonus-secao .secao-num { color: #34D399; }
+
+  .bonus-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .bonus-valor-antigo {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .bonus-valor {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    color: #34D399;
+    line-height: 1;
+  }
+
+  .bonus-valor-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+  }
+
+  .bonus-lista {
+    list-style: none;
+  }
+
+  .bonus-lista li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .bonus-lista li:last-child { border-bottom: none; }
+
+  .bonus-lista li::before {
+    content: '✓';
+    color: #34D399;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .bonus-extras {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .bonus-extras { grid-template-columns: 1fr; }
+  }
+
+  .bonus-extra-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px 24px;
+  }
+
+  .bonus-extra-valor {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .bonus-extra-titulo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--branco);
+    margin-bottom: 6px;
+  }
+
+  .bonus-extra-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  .validade {
+    margin-top: 32px;
+    padding: 16px 24px;
+    background: rgba(24,91,237,0.15);
+    border: 1px solid rgba(24,91,237,0.3);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #93C5FD;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* ---- PRÓXIMOS PASSOS ---- */
+  .passos-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .passo-opcao {
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 28px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .passo-opcao.principal {
+    border-color: var(--azul);
+    background: #EBF3FD;
+  }
+
+  .passo-opcao-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--azul);
+    margin-bottom: 8px;
+  }
+
+  .passo-opcao h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .passo-opcao-preco {
+    font-size: 28px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: var(--azul);
+    margin-top: 12px;
+  }
+
+  .passo-opcao-obs {
+    font-size: 12px;
+    color: var(--cinza);
+    margin-top: 4px;
+  }
+
+  .contato-box {
+    margin-top: 48px;
+    padding: 36px;
+    background: var(--escuro);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .contato-box h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+
+  .contato-box p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .contato-info {
+    text-align: right;
+  }
+
+  .contato-nome {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--branco);
+  }
+
+  .contato-detalhe {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+  }
+
+  .contato-detalhe a {
+    color: var(--azul);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="capa-topo">
+    <div class="logo-agencia">PROPEL X</div>
+    <div class="capa-tag">Proposta Comercial · Maio 2026</div>
+  </div>
+
+  <div class="capa-meio">
+    <div class="capa-subtitulo">Plano de Crescimento Digital</div>
+    <h1 class="capa-titulo">
+      Cuidat<br><span>Vida</span>
+    </h1>
+    <p class="capa-desc">Uma estratégia de tráfego pago pensada para gerar demanda previsível, qualificada e escalável para a sua agência de home care.</p>
+  </div>
+
+  <div class="capa-rodape">
+    <div>
+      <div class="capa-rodape-info">Preparado por <strong>Jose Barbosa</strong></div>
+      <div class="capa-rodape-info" style="margin-top:4px;">Agência Propel X · Fortaleza, CE</div>
+    </div>
+    <div class="bonus-badge">🎁 Setup grátis para fechamento em 24h</div>
+  </div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<div class="secao page-break">
+  <div class="secao-num">01 · Diagnóstico</div>
+  <h2>O cenário atual<br>da Cuidat Vida</h2>
+  <p class="lead">A Cuidat Vida já tem operação consolidada, base de cuidadores e clientes chegando por indicação. O que falta agora é previsibilidade. Boca a boca não escala, e o mercado de home care está crescendo.</p>
+
+  <div class="diag-grid">
+    <div class="diag-card">
+      <div class="diag-card-icone">📣</div>
+      <h4>Captação ainda depende de indicação</h4>
+      <p>Dois fechamentos por semana via boca a boca é um resultado sólido, mas instável. Qualquer queda nas indicações impacta direto o faturamento. Tráfego pago cria uma segunda fonte de clientes que você controla.</p>
+    </div>
+    <div class="diag-card">
+      <div class="diag-card-icone">🔍</div>
+      <h4>Serviço de intenção alta no Google</h4>
+      <p>Quem digita "cuidador de idosos em Fortaleza" já tomou a decisão de buscar ajuda. Esse é o lead mais quente que existe. A rede de pesquisa do Google captura esse momento exato, antes que o cliente ligue para o concorrente.</p>
+    </div>
+    <div class="diag-card">
+      <div class="diag-card-icone">⚠️</div>
+      <h4>Investimento anterior insuficiente</h4>
+      <p>R$ 200/mês em Google Ads no nicho de home care não é suficiente para competir no leilão. O resultado é aparecer pouco, pagar caro por clique e não ter volume suficiente para otimizar. O patamar mínimo recomendado é R$ 2.000/mês em mídia.</p>
+    </div>
+    <div class="diag-card">
+      <div class="diag-card-icone">🏆</div>
+      <h4>Autoridade local para baratear tráfego</h4>
+      <p>Um perfil Google Meu Negócio bem posicionado, com avaliações detalhadas e consistentes, reduz o custo por clique e aumenta a taxa de conversão. Prova social no Google é ativo direto de mídia paga.</p>
+    </div>
+  </div>
+
+  <div class="destaque-box">
+    <p>A Cuidat Vida já tem o produto, a equipe e os resultados. O que está faltando é visibilidade estruturada. Com a estratégia certa, cada R$ 1 investido em Google vira um lead qualificado de alguém que já quer contratar um cuidador.</p>
+  </div>
+</div>
+
+<!-- PLANOS -->
+<div class="secao secao-alt page-break">
+  <div class="secao-num">02 · Planos</div>
+  <h2>Investimento e<br>entregáveis</h2>
+  <p class="lead">Dois serviços complementares que, juntos, formam a estratégia completa de aquisição digital para a Cuidat Vida.</p>
+
+  <div class="planos-grid">
+
+    <!-- Google Ads -->
+    <div class="plano-card destaque">
+      <div class="plano-header">
+        <div class="plano-tag">⭐ Prioridade estratégica</div>
+        <div class="plano-nome">Google Ads<br>Pesquisa</div>
+        <div class="plano-preco-label">Taxa de gestão mensal</div>
+        <div class="plano-preco"><sup>R$</sup>1.500</div>
+        <div class="plano-preco-obs">+ investimento em mídia (recomendado: R$ 2.000+/mês direto ao Google)</div>
+      </div>
+      <div class="plano-body">
+        <div class="plano-item"><div class="plano-item-check">✓</div>Criação e gestão de campanhas na Rede de Pesquisa Google</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Pesquisa e seleção de palavras-chave de alta intenção de compra</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Configuração de conversões e rastreamento via GA4</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Otimização contínua baseada no feedback de vendas</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Relatório semanal e mensal de performance</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Suporte via grupo de WhatsApp exclusivo</div>
+      </div>
+      <div class="plano-footer">
+        <div class="setup-gratis">🎁 <span>Grátis hoje</span> Setup inicial (R$ 500 de economia)</div>
+      </div>
+    </div>
+
+    <!-- GMN -->
+    <div class="plano-card">
+      <div class="plano-header">
+        <div class="plano-tag" style="background:#F3F4F6;color:#374151;">Autoridade local</div>
+        <div class="plano-nome">Google Meu<br>Negócio</div>
+        <div class="plano-preco-label" style="color:#6B7280;">Taxa de gestão mensal</div>
+        <div class="plano-preco" style="color:#111827;"><sup style="color:#111827;">R$</sup>500</div>
+        <div class="plano-preco-obs" style="color:#6B7280;">Sem custo adicional de mídia para este serviço</div>
+      </div>
+      <div class="plano-body">
+        <div class="plano-item"><div class="plano-item-check">✓</div>Otimização completa do perfil no Google Maps</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Postagens semanais no perfil Google</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Gestão e resposta a avaliações</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Fotos e descrições otimizadas para buscas locais</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Relatório de visibilidade local mensal</div>
+        <div class="plano-item"><div class="plano-item-check">✓</div>Estratégia para captação de avaliações qualificadas</div>
+      </div>
+      <div class="plano-footer">
+        <div class="setup-gratis">🎁 <span>Grátis hoje</span> Setup inicial (R$ 500 de economia)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:28px;padding:28px 32px;background:white;border-radius:16px;border:2px solid var(--azul);">
+    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--escuro);margin-bottom:8px;">Combo Completo · R$ 2.000/mês de gestão</div>
+    <div style="font-size:14px;color:var(--cinza);line-height:1.6;">Google Ads + Google Meu Negócio juntos. O GMN fortalece a autoridade local e reduz o custo por clique das campanhas, tornando o investimento em mídia mais eficiente mês a mês.</div>
+  </div>
+
+  <div class="destaque-box" style="background:linear-gradient(135deg,#FFF8EB,#FEF3C7);border-left-color:#D97706;">
+    <p style="color:#92400E;">Quem pesquisa "cuidador de idosos" no Google e vê a Cuidat Vida tanto nos anúncios quanto no mapa com avaliações positivas, converte com muito mais facilidade. Os dois canais se reforçam.</p>
+  </div>
+</div>
+
+<!-- CRONOGRAMA -->
+<div class="secao page-break">
+  <div class="secao-num">03 · Cronograma</div>
+  <h2>Como funciona<br>na prática</h2>
+  <p class="lead">Após a confirmação, iniciamos em até 24 horas. As campanhas entram no ar na primeira semana.</p>
+
+  <div class="cronograma">
+    <div class="fase">
+      <div class="fase-num">
+        <div class="fase-label">Fase 1</div>
+        <div class="fase-prazo">Dias 1 a 3</div>
+      </div>
+      <div class="fase-conteudo">
+        <h4>Onboarding e Configuração</h4>
+        <p>Briefing estratégico, acesso às contas do Google Ads e Google Meu Negócio, instalação de tags de rastreamento, configuração do GA4, alinhamento de metas de conversão e definição das palavras-chave prioritárias.</p>
+      </div>
+    </div>
+    <div class="fase">
+      <div class="fase-num">
+        <div class="fase-label">Fase 2</div>
+        <div class="fase-prazo">Dias 4 a 7</div>
+      </div>
+      <div class="fase-conteudo">
+        <h4>Criação e Lançamento</h4>
+        <p>Criação das campanhas de pesquisa, estrutura de grupos de anúncios por intenção (ex: "cuidador de idosos", "home care", "cuidados em casa"), otimização do perfil GMN, publicação dos primeiros anúncios.</p>
+      </div>
+    </div>
+    <div class="fase">
+      <div class="fase-num">
+        <div class="fase-label">Fase 3</div>
+        <div class="fase-prazo">Semana 2 a 4</div>
+      </div>
+      <div class="fase-conteudo">
+        <h4>Ajuste e Aceleração</h4>
+        <p>Análise dos primeiros dados, refinamento de palavras-chave negativas, ajuste de lances, revisão das extensões de anúncio e alinhamento com o time comercial sobre qualidade dos leads recebidos.</p>
+      </div>
+    </div>
+    <div class="fase">
+      <div class="fase-num">
+        <div class="fase-label">Fase 4</div>
+        <div class="fase-prazo">Mês 2 em diante</div>
+      </div>
+      <div class="fase-conteudo">
+        <h4>Gestão e Otimização Contínua</h4>
+        <p>Acompanhamento semanal das campanhas, otimização baseada em feedback de fechamentos, relatório mensal com resultados e próximos passos, estratégia de avaliações no GMN para baratear o custo por lead ao longo do tempo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="secao-num" style="margin-bottom:16px;">O que você precisa fornecer no início</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#F5F7FA;border-radius:12px;padding:16px 20px;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center;"><span style="color:var(--azul);font-weight:700;">→</span>Acesso à conta do Google Ads (ou criar uma nova)</div>
+      <div style="background:#F5F7FA;border-radius:12px;padding:16px 20px;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center;"><span style="color:var(--azul);font-weight:700;">→</span>Acesso ao perfil Google Meu Negócio</div>
+      <div style="background:#F5F7FA;border-radius:12px;padding:16px 20px;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center;"><span style="color:var(--azul);font-weight:700;">→</span>Definir investimento mensal em mídia</div>
+      <div style="background:#F5F7FA;border-radius:12px;padding:16px 20px;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center;"><span style="color:var(--azul);font-weight:700;">→</span>Informações sobre serviços, diferenciais e área de atendimento</div>
+    </div>
+  </div>
+
+  <div class="destaque-box" style="margin-top:32px;">
+    <p>Sobre a restrição no Business Suite da Meta: isso não impacta o início. A prioridade é o Google Ads, que é o canal mais indicado para home care. Podemos tratar o desbloqueio do Meta em paralelo para uma segunda fase.</p>
+  </div>
+</div>
+
+<!-- BÔNUS -->
+<div class="secao bonus-secao page-break">
+  <div class="secao-num">04 · Bônus</div>
+  <h2>Mais três bônus<br>para fechar hoje</h2>
+
+  <div class="bonus-card">
+    <div>
+      <ul class="bonus-lista">
+        <li>Configuração inicial de contas e acessos (Google Ads e GMN)</li>
+        <li>Instalação de tags de rastreamento e configuração do GA4</li>
+        <li>Estrutura de conversões e metas definidas</li>
+        <li>Briefing e alinhamento estratégico completo</li>
+      </ul>
+    </div>
+    <div style="text-align:center;flex-shrink:0;">
+      <div class="bonus-valor-antigo">R$ 500</div>
+      <div class="bonus-valor">R$0</div>
+      <div class="bonus-valor-label">fechamento em 24 horas</div>
+    </div>
+  </div>
+
+  <div class="bonus-extras">
+    <div class="bonus-extra-card">
+      <div class="bonus-extra-valor">Valor: R$ 350</div>
+      <div class="bonus-extra-titulo">Auditoria de Perfil Instagram</div>
+      <div class="bonus-extra-desc">Análise estratégica do Instagram da Cuidat Vida com recomendações de posicionamento, bio, destaques e tipo de conteúdo que gera mais confiança no nicho de saúde e cuidados.</div>
+    </div>
+    <div class="bonus-extra-card">
+      <div class="bonus-extra-valor">Valor: R$ 400</div>
+      <div class="bonus-extra-titulo">Auditoria de Site</div>
+      <div class="bonus-extra-desc">Análise técnica do site para identificar gargalos de velocidade, estrutura de SEO e recomendações para que o site seja indicado por IAs e buscadores quando alguém pesquisa por home care.</div>
+    </div>
+  </div>
+
+  <div class="validade">⏱ Validade desta proposta: 24 horas a partir do recebimento</div>
+</div>
+
+<!-- PRÓXIMOS PASSOS -->
+<div class="secao">
+  <div class="secao-num">05 · Próximos Passos</div>
+  <h2>Escolha e vamos<br>começar</h2>
+  <p class="lead">Confirme o plano e enviamos o contrato em seguida. O onboarding começa em até 24 horas.</p>
+
+  <div class="passos-opcoes">
+    <div class="passo-opcao principal">
+      <div class="passo-opcao-label">⭐ Recomendado</div>
+      <h4>Combo Completo</h4>
+      <div style="font-size:13px;color:#555;margin-top:4px;">Google Ads + Google Meu Negócio + todos os bônus</div>
+      <div class="passo-opcao-preco">R$ 2.000<span style="font-size:16px;font-weight:400;color:#6B7280;">/mês</span></div>
+      <div class="passo-opcao-obs">+ investimento em mídia (recomendado R$ 2.000+/mês direto ao Google)</div>
+    </div>
+    <div class="passo-opcao">
+      <div class="passo-opcao-label">Só Google Ads</div>
+      <h4>Google Ads Pesquisa</h4>
+      <div style="font-size:13px;color:#555;margin-top:4px;">Campanhas de pesquisa + relatórios + suporte</div>
+      <div class="passo-opcao-preco" style="color:#374151;">R$ 1.500<span style="font-size:16px;font-weight:400;color:#6B7280;">/mês</span></div>
+      <div class="passo-opcao-obs">+ investimento em mídia direto ao Google</div>
+    </div>
+  </div>
+
+  <div class="contato-box">
+    <div>
+      <h4>Alguma dúvida? Fale comigo.</h4>
+      <p>Respondo rápido pelo WhatsApp ou Instagram.</p>
+    </div>
+    <div class="contato-info">
+      <div class="contato-nome">Jose Barbosa</div>
+      <div class="contato-detalhe">Propel X · Fortaleza, CE</div>
+      <div class="contato-detalhe" style="margin-top:4px;"><a href="https://instagram.com/josebarbosa.ads">@josebarbosa.ads</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
